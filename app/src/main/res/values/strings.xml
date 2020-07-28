@@ -4,4 +4,11 @@
     <string name="no_camera_permission">This application cannot run because it does not have the camera permission.  The application will now exit.</string>
     <string name="low_storage_error">Face detector dependencies cannot be downloaded due to low device storage</string>
     <string name="ok">OK</string>
+    <string name="point_camera">Point the Camera towards a QR code</string>
+    <string name="status">Status:</string>
+    <string name="qr_code_data">QR code data:</string>
+    <string name="status_not_available">Status: Not available</string>
+    <string name="status_available">Status: Available</string>
+    <string name="status_collected">Status: Collected</string>
+    <string name="scan_again">Scan Again</string>
 </resources>
