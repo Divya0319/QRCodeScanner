@@ -38,4 +38,7 @@ dependencies {
     // QR code scanner
     implementation 'com.budiyev.android:code-scanner:2.1.0'
 
+    //EasyPermissions for simplifying runtime permissions check
+    implementation 'pub.devrel:easypermissions:3.0.0'
+
 }
