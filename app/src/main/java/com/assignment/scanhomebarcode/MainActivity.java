@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         statusTV = findViewById(R.id.status_tv);
-        qrCodeTV = findViewById(R.id.qrcode_tv);
+        qrCodeTV = findViewById(R.id.qrcode_data_tv);
         btScanAgain = findViewById(R.id.scan_again_bt);
 
         btScanAgain.setOnClickListener(v -> initiateScan());
@@ -60,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void onQrCodeScanned(String result) {
         Log.d("QR scanned:", result);
-        qrCodeTV.setText("QR code data: " + result);
-        runOnUiThread(() -> showDropDown(result));
+        qrCodeTV.setText(result);
+//        runOnUiThread(() -> showDropDown(result));
 
     }
 
