@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,7 +43,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == CommonStatusCodes.SUCCESS && requestCode == RC_CAMERA) {
-            if (data == null) return;
+            if (data == null) {
+                Toast.makeText(this, "No QR code scanned", Toast.LENGTH_LONG).show();
+                return;
+            }
             Barcode barcode = data.getParcelableExtra(BarcodeCaptureActivity.BarcodeObject);
             final String scanResult;
             if (barcode != null) {
