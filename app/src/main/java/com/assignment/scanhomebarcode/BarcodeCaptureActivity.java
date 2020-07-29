@@ -11,6 +11,8 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
+import android.media.AudioManager;
+import android.media.ToneGenerator;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -344,10 +346,17 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
     @Override
     public void onObjectDetected(Barcode data) {
         // TODO: 2017/07/31 Have a list of identified objects and keep adding them till the user decides it's enough
+        playBeepSound();
+
         Intent mIntent = new Intent();
         mIntent.putExtra(BarcodeObject, data);
         setResult(CommonStatusCodes.SUCCESS, mIntent);
         finish();
+    }
+
+    private void playBeepSound() {
+        ToneGenerator beepToneGen = new ToneGenerator(AudioManager.STREAM_MUSIC, 100);
+        beepToneGen.startTone(ToneGenerator.TONE_SUP_PIP, 150);
     }
 
 

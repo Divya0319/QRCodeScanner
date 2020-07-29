@@ -27,9 +27,7 @@ public class MainActivity extends AppCompatActivity {
         qrCodeTV = findViewById(R.id.qrcode_tv);
         btScanAgain = findViewById(R.id.scan_again_bt);
 
-        btScanAgain.setOnClickListener(v -> {
-            initiateScan();
-        });
+        btScanAgain.setOnClickListener(v -> initiateScan());
 
         initiateScan();
 
@@ -72,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
             dialog.dismiss();
             switch (which) {
                 case 0:
+                    onStatusSelected();
                     break;
                 case 1:
                     onCollectedSelected();
@@ -85,6 +84,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         builder.show();
+    }
+
+    private void onStatusSelected() {
+        statusTV.setText(getString(R.string.status_status));
     }
 
     private void onNotAvailableSelected() {

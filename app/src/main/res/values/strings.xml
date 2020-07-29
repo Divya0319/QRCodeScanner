@@ -11,4 +11,5 @@
     <string name="status_available">Status: Available</string>
     <string name="status_collected">Status: Collected</string>
     <string name="scan_again">Scan Again</string>
+    <string name="status_status">Status: --Status--</string>
 </resources>
